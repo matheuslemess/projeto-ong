@@ -219,3 +219,21 @@ legend {
   cursor: pointer;
   color: var(--color-secondary);
 }
+/* --- ESTILOS DE VALIDAÇÃO JS (Entrega 3) --- */
+
+.form-group .error-message {
+  color: var(--color-feedback-error);
+  font-size: var(--fs-300);
+  font-weight: var(--font-weight-bold);
+  display: block;
+  margin-top: var(--space-8);
+  display: none; 
+}
+
+.form-group input.is-invalid {
+  border-color: var(--color-feedback-error);
+}
+
+.form-group span.is-visible {
+  display: block; /* Mostra a mensagem de erro */
+}
