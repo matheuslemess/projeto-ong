@@ -4,108 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - ONG Lemes</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <img src="imagens/ong-home.svg" alt="Logo da Nome da ONG" width="150">
-        </a>
-        <h1>ONG Lemes</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container container-header">
+            <a href="index.html" class="logo">
+                <img src="imagens/ong-home.svg" alt="Logo da ONG Lemes">
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="dropdown">
+                        <a href="projetos.html" class="nav-link">Projetos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="projetos.html#projeto-a">Projeto A</a></li>
+                            <li><a href="projetos.html#projeto-b">Projeto B</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html" class="nav-link is-active">Participe</a></li>
+                </ul>
+            </nav>
+            
+            <a href="cadastro.html" class="btn btn-primary btn-header-desktop">Quero Ajudar</a>
+
+            <button class="hamburger-menu" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </header>
 
     <main>
-        <section aria-labelledby="formulario-cadastro">
-            <h2 id="formulario-cadastro">Formulário de Cadastro</h2>
-            <p>Preencha o formulário abaixo para se candidatar como voluntário ou para receber nossa newsletter.</p>
-            
-            <picture>
-                <source srcset="imagens/cadastro-banner.webp" type="image/webp">
-                <source srcset="imagens/cadastro-banner.jpg" type="image/jpeg">
-                <img src="imagens/cadastro-banner.jpg" alt="Voluntários da ONG trabalhando juntos.">
-            </picture>
-
-            <form action="#" method="post">
-                
-                <fieldset>
-                    <legend>Dados Pessoais</legend>
-
-                    <div>
-                        <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome" name="nome_completo" required minlength="3">
-                    </div>
-
-                    <div>
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required placeholder="seuemail@dominio.com">
-                    </div>
-
-                    <div>
-                        <label for="cpf">CPF:</label>
-                        <input type="text" id="cpf" name="cpf" required 
-                               pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-                               placeholder="000.000.000-00"
-                               title="Digite um CPF no formato 000.000.000-00">
-                    </div>
-
-                    <div>
-                        <label for="telefone">Telefone:</label>
-                        <input type="tel" id="telefone" name="telefone" required
-                               pattern="\(\d{2}\) \d{5}-\d{4}" 
-                               placeholder="(00) 00000-0000"
-                               title="Digite um telefone no formato (00) 00000-0000">
-                    </div>
-                    
-                    <div>
-                        <label for="nascimento">Data de Nascimento:</label>
-                        <input type="date" id="nascimento" name="data_nascimento" required>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Endereço</legend>
-                    
-                    <div>
-                        <label for="cep">CEP:</label>
-                        <input type="text" id="cep" name="cep" required
-                               pattern="\d{5}-\d{3}"
-                               placeholder="00000-000"
-                               title="Digite um CEP no formato 00000-000">
-                    </div>
-
-                    <div>
-                        <label for="endereco">Endereço (Rua, N°):</label>
-                        <input type="text" id="endereco" name="endereco" required>
-                    </div>
-
-                    <div>
-                        <label for="cidade">Cidade:</label>
-                        <input type="text"id="cidade" name="cidade" required>
-                    </div>
-
-                    <div>
-                        <label for="estado">Estado:</label>
-                        <input type="text" id="estado" name="estado" required>
-                    </div>
-                </fieldset>
-
-                <div>
-                    <button type="submit">Enviar Cadastro</button>
-                    <button type="reset">Limpar</button>
+        <section class="page-title-section bg-neutral-200">
+            <div class="container">
+                <h1 class="fs-900 text-center">Participe</h1>
+                <p class="fs-500 text-center">Preencha o formulário abaixo para se candidatar como voluntário ou para receber nossa newsletter.</p>
+                                <div class="form-image-col">
+                    <picture>
+                        <source srcset="imagens/cadastro-banner.webp" type="image/webp">
+                        <source srcset="imagens/cadastro-banner.jpg" type="image/jpeg">
+                        <img src="imagens/cadastro-banner.jpg" alt="Voluntários da ONG trabalhando juntos.">
+                    </picture>
                 </div>
+            </div>
+        </section>
 
-            </form>
+        <section class="form-section" aria-labelledby="formulario-cadastro">
+            <div class="container form-container">
+                <div class="form-content-col">
+                    <h2 id="formulario-cadastro" class="fs-700">Formulário de Cadastro</h2>
+                    
+                    <form action="#" method="post" class="styled-form">
+                        
+                        <fieldset>
+                            <legend>Dados Pessoais</legend>
+                            <div class="form-group">
+                                <label for="nome">Nome Completo:</label>
+                                <input type="text" id="nome" name="nome_completo" required minlength="3">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" required placeholder="seuemail@dominio.com">
+                            </div>
+
+                            <div class="form-group-grid">
+                                <div class="form-group">
+                                    <label for="cpf">CPF:</label>
+                                    <input type="text" id="cpf" name="cpf" required 
+                                        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+                                        placeholder="000.000.000-00"
+                                        title="Digite um CPF no formato 000.000.000-00">
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefone">Telefone:</label>
+                                    <input type="tel" id="telefone" name="telefone" required
+                                        pattern="\(\d{2}\) \d{5}-\d{4}" 
+                                        placeholder="(00) 00000-0000"
+                                        title="Digite um telefone no formato (00) 00000-0000">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="nascimento">Data de Nascimento:</label>
+                                <input type="date" id="nascimento" name="data_nascimento" required>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Endereço</legend>
+                            <div class="form-group-grid-cep">
+                                <div class="form-group">
+                                    <label for="cep">CEP:</label>
+                                    <input type="text" id="cep" name="cep" required
+                                        pattern="\d{5}-\d{3}"
+                                        placeholder="00000-000"
+                                        title="Digite um CEP no formato 00000-000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="endereco">Endereço (Rua, N°):</label>
+                                    <input type="text" id="endereco" name="endereco" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group-grid">
+                                <div class="form-group">
+                                    <label for="cidade">Cidade:</label>
+                                    <input type="text"id="cidade" name="cidade" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="estado">Estado:</label>
+                                    <input type="text" id="estado" name="estado" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-lg">Enviar Cadastro</button>
+                            <button type="reset" class="btn btn-secondary btn-lg">Limpar</button>
+                            <button type="button" class="btn btn-primary btn-lg" disabled>Exemplo Desabilitado</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 ONG Lemes. Todos os direitos reservados.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 ONG Lemes. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('.main-nav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+            document.body.classList.toggle('no-scroll');
+        });
+    </script>
 </body>
 </html>

@@ -4,61 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONG Lemes - Página Inicial</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <img src="imagens/ong-home.svg" alt="Logo da Nome da ONG" width="150"> </a>
-        <h1>ONG Lemes</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container container-header">
+            <a href="index.html" class="logo">
+                <img src="imagens/ong-home.svg" alt="Logo da ONG Lemes">
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link is-active">Início</a></li>
+                    <li class="dropdown">
+                        <a href="projetos.html" class="nav-link">Projetos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="projetos.html#projeto-a">Projeto A</a></li>
+                            <li><a href="projetos.html#projeto-b">Projeto B</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html" class="nav-link">Participe</a></li>
+                </ul>
+            </nav>
+            
+            <a href="cadastro.html" class="btn btn-primary btn-header-desktop">Quero Ajudar</a>
+
+            <button class="hamburger-menu" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </header>
 
     <main>
-        <section aria-labelledby="missao">
-        <h2 id="missao">Nossa Missão</h2>
-            <p>
-            Nossa missão é transformar realidades e construir futuros através da educação, esporte e apoio social. Acreditamos que toda criança e jovem merece a oportunidade de alcançar seu pleno potencial, independentemente de sua origem. 
-            </p>
-            <p>
-                <strong>Visão:</strong> Ser uma organização de referência no desenvolvimento comunitário, reconhecida pela excelência em nossos projetos e pelo impacto duradouro na vida das pessoas que servimos.
-            </p>
-            <p>
-                <strong>Valores:</strong> Atuamos com Transparência, Empatia, Respeito à diversidade e Compromisso com resultados sociais.
-            </p>              
-            <picture>
-                <source srcset="imagens/ong-home.webp" type="image/webp">
-                <source srcset="imagens/ong-home.jpg" type="image/jpeg">
-                <img src="imagens/ong-home.jpg" alt="Foto da equipe da ONG ou de uma atividade principal.">
-            </picture>
-
+        <section class="hero">
+            <div class="container grid-12">
+                <div class="hero-content col-12 col-lg-6">
+                    <span class="badge badge-accent mb-16">Junte-se a nós</span>
+                    <h1 class="fs-900">Transformando Realidades, Um Dia de Cada Vez</h1>
+                    <p class="fs-500 mb-32">Nossa missão é construir futuros através da educação, esporte e apoio social. Veja como você pode fazer parte dessa mudança.</p>
+                    <div class="hero-buttons">
+                        <a href="projetos.html" class="btn btn-primary btn-lg">Nossos Projetos</a>
+                        <a href="cadastro.html" class="btn btn-secondary btn-lg">Seja Voluntário</a>
+                    </div>
+                </div>
+                <div class="hero-image col-12 col-lg-6">
+                    <picture>
+                        <source srcset="imagens/ong-home.webp" type="image/webp">
+                        <source srcset="imagens/ong-home.jpg" type="image/jpeg">
+                        <img src="imagens/ong-home.jpg" alt="Foto da equipe da ONG ou de uma atividade principal.">
+                    </picture>
+                </div>
+            </div>
         </section>
 
-        <section aria-labelledby="sobre">
-            <h2 id="sobre">Sobre Nós</h2>
-            <p>Conte um breve histórico da organização, suas principais conquistas e quem são as pessoas por trás do trabalho.</p>
+        <section class="missao-valores" aria-labelledby="missao">
+            <div class="container">
+                <h2 id="missao" class="fs-800 text-center">Nossa Missão, Visão e Valores</h2>
+                <div class="grid-12 grid-gap-32">
+                    <div class="col-12 col-md-4">
+                        <h3 class="fs-600">Missão</h3>
+                        <p>Transformar realidades e construir futuros através da educação, esporte e apoio social. Acreditamos que toda criança e jovem merece a oportunidade de alcançar seu pleno potencial.</p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <h3 class="fs-600">Visão</h3>
+                        <p>Ser uma organização de referência no desenvolvimento comunitário, reconhecida pela excelência em nossos projetos e pelo impacto duradouro na vida das pessoas que servimos.</p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <h3 class="fs-600">Valores</h3>
+                        <p>Atuamos com Transparência, Empatia, Respeito à diversidade e Compromisso com resultados sociais.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section aria-labelledby="contato">
-            <h2 id="contato">Informações de Contato</h2>
-            <address>
-                <p>Entre em contato conosco para mais informações:</p>
-                <ul>
-                    <li>Email: <a href="mailto:contato@onglemes.com">contato@onglemes.com</a></li>
-                    <li>Telefone: <a href="tel:+5511999998888">(11) 99999-8888</a></li>
-                    <li>Endereço: Rua Exemplo, 123, Bairro, Cidade - UF</li>
-                </ul>
-            </address>
+        <section class="contato-info bg-neutral-200" aria-labelledby="contato">
+            <div class="container text-center">
+                <h2 id="contato" class="fs-700">Informações de Contato</h2>
+                <address class="contato-details">
+                    <p>Email: <a href="mailto:contato@onglemes.com">contato@onglemes.com</a></p>
+                    <p>Telefone: <a href="tel:+5511999998888">(11) 99999-8888</a></p>
+                    <p>Endereço: Rua Exemplo, 123, Bairro, Cidade - UF</p>
+                </address>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 ONG Lemes. Todos os direitos reservados.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 ONG Lemes. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
+    <div class="modal" id="modal-exemplo">
+        <div class="modal-overlay" aria-label="Fechar modal"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fechar modal">&times;</button>
+            <h3 class="fs-600">Bem-vindo!</h3>
+            <p>Este é um exemplo de modal que pode ser usado para avisos.</p>
+        </div>
+    </div>
+    
+    <script>
+        // JS simples para o menu hambúrguer
+        const hamburger = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('.main-nav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+            document.body.classList.toggle('no-scroll');
+        });
+    </script>
 </body>
 </html>

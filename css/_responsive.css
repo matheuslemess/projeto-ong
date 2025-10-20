@@ -1,0 +1,95 @@
+/* --- RESPONSIVIDADE (5+ Breakpoints) --- */
+
+/* Breakpoints (Mobile First)
+   Base: 0px+ (Mobile) - Já definido nos arquivos anteriores
+   sm: 480px+ (Mobile maior)
+   md: 768px+ (Tablet)
+   lg: 1024px+ (Desktop)
+   xl: 1200px+ (Container max-width)
+   xxl: 1440px+ (Desktop grande)
+*/
+
+/* --- sm: 480px+ --- */
+@media (min-width: 480px) {
+  /* Layout do formulário */
+  .form-group-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* --- md: 768px+ (Tablet) --- */
+@media (min-width: 768px) {
+  /* Tipografia maior */
+  :root {
+    --fs-900: 3.75rem;
+    --fs-800: 3rem;
+  }
+  
+  /* Layout de Colunas (Grid 12) */
+  .col-md-4 { grid-column: span 4; }
+  .col-md-6 { grid-column: span 6; }
+  
+  /* Layout da página de cadastro */
+  .form-container {
+    grid-template-columns: 1fr 1fr; /* 2 colunas */
+  }
+  .form-group-grid-cep {
+    grid-template-columns: 1fr 2fr; /* Colunas 1/3 e 2/3 */
+  }
+  
+  /* Navegação */
+  .hamburger-menu {
+    display: none; /* Esconde o hambúrguer */
+  }
+  .main-nav {
+    display: block; /* Mostra o menu desktop */
+  }
+  .btn-header-desktop {
+    display: inline-block; /* Mostra o botão "Quero Ajudar" */
+  }
+  .main-nav.is-active { /* Reseta o menu mobile */
+      position: static;
+      top: auto;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      flex-direction: row;
+      padding: 0;
+  }
+  .main-nav.is-active .nav-list {
+      flex-direction: row;
+      text-align: left;
+      gap: var(--space-24);
+  }
+  .main-nav.is-active .nav-link {
+      font-size: var(--fs-400);
+  }
+}
+
+/* --- lg: 1024px+ (Desktop) --- */
+@media (min-width: 1024px) {
+  /* Layout de Colunas (Grid 12) */
+  .col-lg-4 { grid-column: span 4; }
+  .col-lg-6 { grid-column: span 6; }
+  
+  /* Hero */
+  .hero-content {
+    align-items: flex-start;
+  }
+  .hero-image {
+    order: 1; /* Garante que a imagem fique à direita */
+  }
+}
+
+/* --- xl: 1200px+ --- */
+@media (min-width: 1200px) {
+  /* O .container atinge seu max-width aqui */
+}
+
+/* --- xxl: 1440px+ (Desktop Grande) --- */
+@media (min-width: 1440px) {
+  /* Aumenta o tamanho base para telas maiores */
+  body {
+    font-size: 1.125rem; /* 18px */
+  }
+}

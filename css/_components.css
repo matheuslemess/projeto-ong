@@ -1,0 +1,221 @@
+/* --- COMPONENTES DE UI --- */
+
+.btn {
+  display: inline-block;
+  padding: var(--space-16) var(--space-32);
+  font-size: var(--fs-400);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.btn-lg {
+  padding: var(--space-24) var(--space-48);
+  font-size: var(--fs-500);
+}
+
+/* Variação Primária */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-neutral-100);
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--color-primary-dark);
+  color: var(--color-neutral-100);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* Variação Secundária */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: var(--color-primary);
+  color: var(--color-neutral-100);
+  text-decoration: none;
+}
+
+/* Estado Desabilitado */
+.btn:disabled, .btn[disabled] {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-neutral-100);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* 2. Cards (para projetos) */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-neutral-100);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+.card-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.card-content {
+  padding: var(--space-24);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; 
+}
+.card-content h3 {
+  margin-bottom: var(--space-8);
+}
+.card-content .btn {
+  margin-top: auto; 
+  align-self: flex-start; 
+}
+
+/* 3. Badges e Tags */
+.badge {
+  display: inline-block;
+  padding: var(--space-8) var(--space-16);
+  font-size: var(--fs-300);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  border-radius: 50px; 
+  color: var(--color-neutral-100);
+}
+.card-tags {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+.badge-primary { background-color: var(--color-primary); }
+.badge-secondary { background-color: var(--color-secondary); }
+.badge-accent { background-color: var(--color-accent); }
+
+/* 4. Formulários Estilizados */
+.styled-form {
+  width: 100%;
+}
+.form-group {
+  margin-bottom: var(--space-24);
+}
+.form-group label {
+  display: block;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-8);
+  color: var(--color-neutral-900);
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"] {
+  width: 100%;
+  padding: var(--space-16);
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--border-radius-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Validação Visual (Req. Componentes) */
+.form-group input:required:valid {
+  border-color: var(--color-feedback-success);
+}
+.form-group input:required:invalid {
+  border-color: var(--color-feedback-error);
+}
+.form-group input:required:invalid:not(:placeholder-shown) {
+  border-color: var(--color-feedback-error);
+}
+
+fieldset {
+  border: none;
+  margin-bottom: var(--space-32);
+}
+legend {
+  font-size: var(--fs-600);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-900);
+  margin-bottom: var(--space-16);
+}
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  margin-top: var(--space-32);
+}
+.form-group-grid, .form-group-grid-cep {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+}
+
+/* 5. Alertas (Feedback) */
+.alert {
+  padding: var(--space-16);
+  border-radius: var(--border-radius-sm);
+  border: 1px solid transparent;
+}
+.alert-success {
+  color: #155724;
+  background-color: #D4EDDA;
+  border-color: #C3E6CB;
+}
+.alert-error {
+  color: #721C24;
+  background-color: #F8D7DA;
+  border-color: #F5C6CB;
+}
+
+/* 6. Modal (Feedback) */
+.modal {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  /* (JS seria necessário para adicionar 'display: flex' e mostrá-lo) */
+}
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.modal-content {
+  position: relative;
+  background-color: var(--color-neutral-100);
+  padding: var(--space-32);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  min-width: 300px;
+  max-width: 90%;
+}
+.modal-close {
+  position: absolute;
+  top: var(--space-16);
+  right: var(--space-16);
+  background: none;
+  border: none;
+  font-size: var(--fs-700);
+  cursor: pointer;
+  color: var(--color-secondary);
+}

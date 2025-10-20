@@ -1,0 +1,41 @@
+/* --- DESIGN SYSTEM: VARIÁVEIS CSS --- */
+
+:root {
+  --color-primary: #007BFF;       
+  --color-primary-dark: #0056b3; 
+  --color-secondary: #6C757D;   
+  --color-accent: #28A745;      
+  
+  --color-neutral-100: #FFFFFF;   
+  --color-neutral-200: #F8F9FA;  
+  --color-neutral-700: #495057;  
+  --color-neutral-900: #212529;   
+
+  --color-feedback-success: #28A745;
+  --color-feedback-error: #DC3545;
+
+  --font-primary: 'Arial', sans-serif; 
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --fs-900: 3.052rem; 
+  --fs-800: 2.441rem; 
+  --fs-700: 1.953rem; 
+  --fs-600: 1.563rem; 
+  --fs-500: 1.25rem;  
+  --fs-400: 1rem;    
+  --fs-300: 0.8rem;  
+  
+  --space-8:   0.5rem;   
+  --space-16:  1rem;     
+  --space-24:  1.5rem;  
+  --space-32:  2rem;    
+  --space-48:  3rem;    
+  --space-64:  4rem;   
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.2s ease-in-out;
+}

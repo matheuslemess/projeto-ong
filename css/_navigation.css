@@ -1,0 +1,134 @@
+/* --- NAVEGAÇÃO: PRINCIPAL, DROPDOWN, HAMBÚRGUER --- */
+
+.main-nav {
+  display: none; /* Escondido em mobile por padrão */
+}
+.nav-list {
+  display: flex;
+  gap: var(--space-24);
+}
+.nav-link {
+  font-size: var(--fs-400);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-700);
+  padding: var(--space-8) 0;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--color-primary);
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+.nav-link:hover::after,
+.nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+/* Botão de "Quero Ajudar" no header desktop */
+.btn-header-desktop {
+  display: none; /* Escondido em mobile */
+}
+
+/* --- Menu Dropdown --- */
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  display: none; /* Escondido por padrão */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-neutral-100);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-md);
+  min-width: 200px;
+  z-index: 1001;
+  padding: var(--space-8) 0;
+}
+.dropdown:hover .dropdown-menu {
+  display: block; 
+}
+.dropdown-menu li {
+  width: 100%;
+}
+.dropdown-menu a {
+  display: block;
+  padding: var(--space-8) var(--space-16);
+  color: var(--color-neutral-700);
+}
+.dropdown-menu a:hover {
+  background-color: var(--color-neutral-200);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+
+/* --- Menu Hambúrguer (Mobile) --- */
+.hamburger-menu {
+  display: flex; /* Visível em mobile */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1002;
+}
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-neutral-900);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+/* Animação do Hambúrguer para "X" */
+.hamburger-menu.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg);
+}
+.hamburger-menu.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Estilos do menu quando ativo (mobile) */
+.main-nav.is-active {
+  display: flex;
+  position: fixed;
+  top: 83px; 
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 83px);
+  background-color: var(--color-neutral-100);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-32);
+}
+.main-nav.is-active .nav-list {
+  flex-direction: column;
+  text-align: center;
+  gap: var(--space-32);
+}
+.main-nav.is-active .nav-link {
+  font-size: var(--fs-700);
+}
+/* Oculta o dropdown no menu mobile ativo */
+.main-nav.is-active .dropdown-menu {
+  display: none;
+}

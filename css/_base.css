@@ -1,0 +1,62 @@
+/* --- ESTILOS GLOBAIS E TIPOGRAFIA --- */
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--fs-400);
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-700);
+}
+
+/* Classes utilitárias de tipografia */
+h1, .fs-900 { font-size: var(--fs-900); color: var(--color-neutral-900); margin-bottom: var(--space-16); }
+h2, .fs-800 { font-size: var(--fs-800); color: var(--color-neutral-900); margin-bottom: var(--space-16); }
+h3, .fs-700 { font-size: var(--fs-700); color: var(--color-neutral-900); margin-bottom: var(--space-16); }
+h4, .fs-600 { font-size: var(--fs-600); color: var(--color-neutral-900); margin-bottom: var(--space-16); }
+.fs-500 { font-size: var(--fs-500); line-height: 1.5; }
+
+p {
+  margin-bottom: var(--space-16);
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--color-primary);
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+/* Classes utilitárias de cor e layout */
+.text-center { text-align: center; }
+.text-primary { color: var(--color-primary); }
+.bg-neutral-200 { background-color: var(--color-neutral-200); }
+.bg-primary-dark { background-color: var(--color-primary-dark); color: var(--color-neutral-100); }
+.bg-primary-dark h2,
+.bg-primary-dark p { color: var(--color-neutral-100); }
+
+/* Classes de espaçamento (baseado no Design System) */
+.mb-16 { margin-bottom: var(--space-16); }
+.mb-32 { margin-bottom: var(--space-32); }
+.mt-32 { margin-top: var(--space-32); }
+
+/* Para esconder elementos visualmente, mas mantê-los para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Impede o scroll quando o menu mobile está aberto */
+.no-scroll {
+  overflow: hidden;
+}

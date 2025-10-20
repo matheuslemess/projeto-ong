@@ -4,67 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos - ONG Lemes</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <img src="imagens/ong-home.svg" alt="Logo da Nome da ONG" width="150">
-        </a>
-        <h1>ONG Lemes</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Participe</a></li>
-            </ul>
-        </nav>
+    <header class="site-header">
+        <div class="container container-header">
+            <a href="index.html" class="logo">
+                <img src="imagens/ong-home.svg" alt="Logo da Nome da ONG">
+            </a>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="dropdown">
+                        <a href="projetos.html" class="nav-link is-active">Projetos</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="projetos.html#projeto-a">Projeto A</a></li>
+                            <li><a href="projetos.html#projeto-b">Projeto B</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html" class="nav-link">Participe</a></li>
+                </ul>
+            </nav>
+            
+            <a href="cadastro.html" class="btn btn-primary btn-header-desktop">Quero Ajudar</a>
+
+            <button class="hamburger-menu" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
     </header>
 
     <main>
-        <section aria-labelledby="nossos-projetos">
-            <h2 id="nossos-projetos">Nossos Projetos Sociais</h2>
-            <p>Conheça as iniciativas que estão mudando realidades. Cada projeto é pensado para gerar o máximo impacto positivo.</p>
-
-            <article>
-                <h3>Projeto A: Educação para Crianças</h3>
-                
-                <picture>
-                    <source srcset="imagens/projeto-exemplo.webp" type="image/webp">
-                    <source srcset="imagens/projeto-exemplo.jpg" type="image/jpeg">
-                    <img src="imagens/projeto-exemplo.jpg" alt="Crianças em uma sala de aula do projeto.">
-                </picture>
-
-                <p>O Projeto "Educação para Crianças" oferece reforço escolar, oficinas de leitura e atividades lúdicas no contraturno escolar. Nosso objetivo é combater a evasão escolar e garantir que cada criança tenha as ferramentas necessárias para construir um futuro brilhante, desenvolvendo habilidades acadêmicas e socioemocionais em um ambiente seguro e acolhedor.</p>
-            </article>
-
-            <article>
-                <h3>Projeto B: Esporte e Inclusão</h3>
-                
-                <picture>
-                    <source srcset="imagens/projeto2.webp" type="image/webp">
-                    <source srcset="imagens/projeto2.jpg" type="image/jpeg">
-                    <img src="imagens/projeto2.jpg" alt="Crianças jogando bola em uma quadra como parte do projeto social.">
-                </picture>
-
-                <p>Através do "Esporte e Inclusão", utilizamos o futebol e outras modalidades esportivas como ferramentas de transformação social. Mais do que treinar atletas, formamos cidadãos. O projeto promove valores essenciais como trabalho em equipe, disciplina, respeito e resiliência, tirando jovens de situações de vulnerabilidade e oferecendo um caminho saudável para o crescimento pessoal.</p>
-            </article>
+        <section class="page-title-section bg-neutral-200">
+            <div class="container">
+                <h1 class="fs-900 text-center">Nossos Projetos</h1>
+                <p class="fs-500 text-center">Conheça as iniciativas que estão mudando realidades. Cada projeto é pensado para gerar o máximo impacto positivo.</p>
+            </div>
         </section>
 
-        <section aria-labelledby="voluntariado">
-            <h2 id="voluntariado">Seja um Voluntário</h2>
-            <p>Seu tempo e talento podem fazer a diferença. O voluntariado é uma peça-chave da nossa organização. Veja como você pode ajudar e se inscreva!</p>
-            <a href="cadastro.html">Quero ser voluntário</a>
+        <div class="container mt-32">
+            <div class="alert alert-success" role="alert">
+                Estamos com novas vagas para voluntários no Projeto B!
+            </div>
+        </div>
+
+
+        <section class="projetos-list" aria-labelledby="nossos-projetos">
+            <div class="container">
+                <h2 id="nossos-projetos" class="sr-only">Lista de Projetos</h2>
+                
+                <div class="grid-12 grid-gap-32">
+
+                    <article class="card col-12 col-md-6" id="projeto-a">
+                        <picture class="card-image">
+                            <source srcset="imagens/projeto-exemplo.webp" type="image/webp">
+                            <source srcset="imagens/projeto-exemplo.jpg" type="image/jpeg">
+                            <img src="imagens/projeto-exemplo.jpg" alt="Crianças em uma sala de aula do projeto.">
+                        </picture>
+                        <div class="card-content">
+                            <div class="card-tags">
+                                <span class="badge badge-primary">Educação</span>
+                                <span class="badge badge-secondary">Crianças</span>
+                            </div>
+                            <h3 class="fs-600">Projeto A: Educação para Crianças</h3>
+                            <p>O Projeto "Educação para Crianças" oferece reforço escolar, oficinas de leitura e atividades lúdicas no contraturno escolar. Nosso objetivo é combater a evasão escolar e garantir que cada criança tenha as ferramentas necessárias para construir um futuro brilhante.</p>
+                            <a href="cadastro.html" class="btn btn-primary">Quero Apoiar</a>
+                        </div>
+                    </article>
+
+                    <article class="card col-12 col-md-6" id="projeto-b">
+                        <picture class="card-image">
+                            <source srcset="imagens/projeto2.webp" type="image/webp">
+                            <source srcset="imagens/projeto2.jpg" type="image/jpeg">
+                            <img src="imagens/projeto2.jpg" alt="Crianças jogando bola em uma quadra como parte do projeto social.">
+                        </picture>
+                        <div class="card-content">
+                            <div class="card-tags">
+                                <span class="badge badge-primary">Esporte</span>
+                                <span class="badge badge-accent">Inclusão</span>
+                            </div>
+                            <h3 class="fs-600">Projeto B: Esporte e Inclusão</h3>
+                            <p>Através do "Esporte e Inclusão", utilizamos o futebol e outras modalidades esportivas como ferramentas de transformação social. Mais do que treinar atletas, formamos cidadãos, promovendo valores essenciais como trabalho em equipe, disciplina e respeito.</p>
+                            <a href="cadastro.html" class="btn btn-primary">Quero Apoiar</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
         </section>
 
-        <section aria-labelledby="doacoes">
-            <h2 id="doacoes">Como Doar</h2>
-            <p>Sua contribuição financeira é fundamental para mantermos nossos projetos ativos. As doações podem ser feitas de forma segura e transparente.</p>
-            <p>Para doar, entre em contato ou utilize nossa chave PIX: 123.456.789-00</p>
+        <section class="cta-section bg-primary-dark text-center">
+            <div class="container">
+                <h2 class="fs-700">Seja um Voluntário</h2>
+                <p class="fs-500 mb-32">Seu tempo e talento podem fazer a diferença. O voluntariado é uma peça-chave da nossa organização. Veja como você pode ajudar e se inscreva!</p>
+                <a href="cadastro.html" class="btn btn-secondary btn-lg">Quero ser voluntário</a>
+            </div>
+        </section>
+
+        <section class="doacao-section" aria-labelledby="doacoes">
+            <div class="container text-center">
+                <h2 id="doacoes" class="fs-700">Como Doar</h2>
+                <p class="fs-500 mb-32">Sua contribuição financeira é fundamental para mantermos nossos projetos ativos. As doações podem ser feitas de forma segura e transparente.</p>
+                <p class="fs-600">Chave PIX: <strong class="text-primary">123.456.789-00</strong></p>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 ONG Lemes. Todos os direitos reservados.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 ONG Lemes. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('.main-nav');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+            document.body.classList.toggle('no-scroll');
+        });
+    </script>
 </body>
 </html>
