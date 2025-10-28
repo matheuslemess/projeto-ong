@@ -30,6 +30,59 @@ a:hover {
   text-decoration: underline;
 }
 
+/* --- GERENCIAMENTO DE TEMA (MODO ESCURO) --- */
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: var(--fs-500);
+  line-height: 1;
+  transition: all var(--transition-fast);
+}
+.theme-toggle:hover, .theme-toggle:focus {
+  background-color: var(--color-neutral-200);
+  outline-color: var(--color-primary);
+}
+
+/* * Variáveis do Modo Escuro
+ * Quando o body tiver a classe .dark-mode, 
+ * estas variáveis substituem as originais.
+ */
+body.dark-mode {
+  --color-neutral-100: #1a1a1a; /* Fundo principal (era branco) */
+  --color-neutral-200: #2c2c2c; /* Fundo secundário (era cinza claro) */
+  --color-neutral-700: #e0e0e0; /* Texto Padrão (era cinza escuro) */
+  --color-neutral-900: #ffffff; /* Títulos (era preto) */
+  
+  --color-secondary: #444;    /* Bordas de inputs (era cinza claro) */
+}
+
+/* * Ajustes finos
+ * Para elementos que não são 100% controlados por variáveis.
+ */
+.dark-mode .site-header {
+  border-color: var(--color-secondary);
+  /* O background já é --color-neutral-100, vai trocar sozinho */
+}
+
+.dark-mode .form-group input[type="text"],
+.dark-mode .form-group input[type="email"],
+.dark-mode .form-group input[type="tel"],
+.dark-mode .form-group input[type="date"] {
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-700);
+}
+
+.dark-mode .card {
+  /* O background do card já é --color-neutral-100, vai trocar sozinho */
+  border: 1px solid var(--color-secondary);
+}
+
 /* Classes utilitárias de cor e layout */
 .text-center { text-align: center; }
 .text-primary { color: var(--color-primary); }
