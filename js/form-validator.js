@@ -82,10 +82,14 @@ function validateField(input) {
  */
 function showError(input, message) {
   const formGroup = input.parentElement;
-  const errorSpan = formGroup.querySelector('.error-message');
+
+  const errorSpan = formGroup.querySelector(`#${input.id}-error`);
   
   if (errorSpan) {
     input.classList.add('is-invalid');
+    input.setAttribute('aria-invalid', 'true'); 
+    input.setAttribute('aria-describedby', errorSpan.id); 
+
     errorSpan.textContent = message;
     errorSpan.classList.add('is-visible');
   }
@@ -96,10 +100,14 @@ function showError(input, message) {
  */
 function clearError(input) {
   const formGroup = input.parentElement;
-  const errorSpan = formGroup.querySelector('.error-message');
+  
+  const errorSpan = formGroup.querySelector(`#${input.id}-error`); 
 
   if (errorSpan) {
     input.classList.remove('is-invalid');
+    input.setAttribute('aria-invalid', 'false');
+    input.removeAttribute('aria-describedby');
+
     errorSpan.textContent = '';
     errorSpan.classList.remove('is-visible');
   }
